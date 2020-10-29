@@ -1,4 +1,4 @@
-﻿#include <iostream>
+#include <iostream>
 #include <math.h>
 #include <locale.h>
 #include <limits>
@@ -45,7 +45,7 @@ float InputPosFloat(const char PromptName[], const char MessageFail1[])
 
 int main()
 {
-    setlocale(LC_ALL, "Russian");
+    setlocale(LC_ALL, "ru-RU.UTF-8");
 
     float a = 1.0;
     float b = 1.0;

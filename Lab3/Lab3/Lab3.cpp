@@ -4,17 +4,17 @@ using namespace std;
 
 int main()
 {
-	setlocale(LC_ALL, "Russian");
+	setlocale(LC_ALL, "ru-RU.UTF-8");
 
 	double x1, x0;
 	double e = 0.0001;
 
-	cout << "Âû÷èñëèì ïðèìåðíî êîðåíü ïÿòîé ñòåïåíè èç à." << endl;
-	double a = GetDouble("Ââåäèòå ÷èñëî a:", "×èñëî ââåäåíî íåïðàâèëüíî!");
+	cout << "Ð’Ñ‹Ñ‡Ð¸ÑÐ»Ð¸Ð¼ Ð¿Ñ€Ð¸Ð¼ÐµÑ€Ð½Ð¾ ÐºÐ¾Ñ€ÐµÐ½ÑŒ Ð¿ÑÑ‚Ð¾Ð¹ ÑÑ‚ÐµÐ¿ÐµÐ½Ð¸ Ð¸Ð· Ð°." << endl;
+	double a = GetDouble("Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ñ‡Ð¸ÑÐ»Ð¾ a:", "Ð§Ð¸ÑÐ»Ð¾ Ð²Ð²ÐµÐ´ÐµÐ½Ð¾ Ð½ÐµÐ¿Ñ€Ð°Ð²Ð¸Ð»ÑŒÐ½Ð¾!");
 
 	if (a <= 1)
 		x0 = Minimum(2. * a, 0.95);
-	else if (a > 1. && a < 25.)
+	else if (a > 1. && a < 25.) 
 		x0 = a / 5.;
 	else
 		x0 = a / 25.;
@@ -28,7 +28,7 @@ int main()
 		cout << "x =" << setw(12) << setprecision(8) << fixed << x1 << endl;
 	}
 
-	cout << "Êîðåíü ïÿòîé ñòåïåíè èç a ïðèìåðíî ðàâåí " << x1 << endl;
+	cout << "ÐšÐ¾Ñ€ÐµÐ½ÑŒ Ð¿ÑÑ‚Ð¾Ð¹ ÑÑ‚ÐµÐ¿ÐµÐ½Ð¸ Ð¸Ð· a Ð¿Ñ€Ð¸Ð¼ÐµÑ€Ð½Ð¾ Ñ€Ð°Ð²ÐµÐ½ " << x1 << endl;
 
 	system("pause");
 	return 0;

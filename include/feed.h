@@ -38,7 +38,7 @@ static int GetInt(const char PromptMessage[], const char FailMessage[])
 {
 	float f_Number;
 
-	while (true)
+	while (true) 
 	{
 		std::cout << PromptMessage << "\n";
 		std::cin >> f_Number;

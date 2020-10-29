@@ -28,7 +28,7 @@ int main()
 		cout << "x =" << setw(12) << setprecision(8) << fixed << x1 << endl;
 	}
 
-	cout << "Корень пятой степени из a примерно равен " << x1 << endl;
+	cout << "Корень пятой степени из " << a << " примерно равен " << x1 << endl;
 
 	system("pause");
 	return 0;

@@ -1,15 +1,18 @@
 #pragma once
 
 #include <iostream>
+#include <math.h>
 #include <limits>
+#include <locale.h>
+#include <iomanip>
 
-double RoundTo(double Number, int DecimalPlace)
+static double RoundTo(double Number, int DecimalPlace)
 {
 	double D = round(Number * pow(10, DecimalPlace)) / pow(10, DecimalPlace);
 	return D;
 }
 
-float GetDouble(const char PromptMessage[], const char FailMessage[])
+static float GetDouble(const char PromptMessage[], const char FailMessage[])
 {
 	float d_Number;
 
@@ -22,7 +25,7 @@ float GetDouble(const char PromptMessage[], const char FailMessage[])
 		{
 			std::cout << FailMessage << "\n";
 			std::cin.clear();
-			std::cin.ignore(std::numeric_limits<streamsize>::max(), '\n');
+			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 		}
 		else
 		{
@@ -31,7 +34,7 @@ float GetDouble(const char PromptMessage[], const char FailMessage[])
 	}
 }
 
-int GetInt(const char PromptMessage[], const char FailMessage[])
+static int GetInt(const char PromptMessage[], const char FailMessage[])
 {
 	float f_Number;
 
@@ -44,11 +47,19 @@ int GetInt(const char PromptMessage[], const char FailMessage[])
 		{
 			std::cout << FailMessage << "\n";
 			std::cin.clear();
-			std::cin.ignore(std::numeric_limits<streamsize>::max(), '\n');
+			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 		}
 		else
 		{
 			return round(f_Number);
 		}
 	}
+}
+
+static double Minimum(double Number1, double Number2)
+{
+	if (Number1 < Number2)
+		return Number1;
+	else
+		return Number2;
 }

@@ -1,0 +1,17 @@
+﻿*.sln
+*.vcxproj
+*.user
+*.filters
+*.suo
+*.exe
+*.pdb
+*.db
+*.ilk
+*.tlog
+*.obj
+*.idb
+*.ipch
+*.recipe
+*.log
+*.db-shm
+*.db-wal

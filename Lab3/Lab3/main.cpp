@@ -17,6 +17,9 @@ int main()
 	cout << "Вычислим примерно корень пятой степени из а." << endl;
 	double a = GetDouble("Введите число a:", "Число введено неправильно!");
 
+	ios init(NULL);
+	init.copyfmt(cout);
+
 	if (a <= 1)
 		x0 = Minimum(2. * a, 0.95);
 	else if (a > 1. && a < 25.) 
@@ -33,7 +36,9 @@ int main()
 		cout << "x =" << setw(12) << setprecision(8) << fixed << x1 << endl;
 	}
 
-	cout << "Корень пятой степени из " << a << " примерно равен " << x1 << endl;
+	cout.copyfmt(init);
+
+	cout << "Корень пятой степени из "<< a << " с точностью до " << e << " равен " << setprecision(8) << x1 << endl;
 
 	system("pause");
 	return 0;

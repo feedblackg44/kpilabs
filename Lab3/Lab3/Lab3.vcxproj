@@ -140,7 +140,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Lab3.cpp" />
+    <ClCompile Include="..\..\include\feed.cpp" />
+    <ClCompile Include="functions.cpp" />
+    <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\include\feed.h" />

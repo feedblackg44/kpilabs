@@ -1,4 +1,9 @@
-#include <feed.h>
+#include <iostream>
+#include <math.h>
+#include <limits>
+#include <locale.h>
+#include <iomanip>
+#include "feed.h"
 
 using namespace std;
 

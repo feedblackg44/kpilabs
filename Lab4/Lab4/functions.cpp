@@ -8,12 +8,4 @@
 
 using namespace std;
 
-int main()
-{
-	EventProgramLoad();
-	
-	// Code here
-
-	system("pause");
-	return 0;
-}
+// Functions here

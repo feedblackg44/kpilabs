@@ -18,6 +18,27 @@ double RoundTo(double Number, int DecimalPlace)
 	return D;
 }
 
+void PrintFormated(const char NumberName[], double Number, int weight, int precision, bool Fixed)
+{
+	cout << NumberName << " = ";
+	
+	if (Fixed)
+		cout << fixed;
+	else
+		cout << defaultfloat;
+	if (weight > 0)
+		cout << setw(weight);
+	if (precision > 0)
+		cout << setprecision(precision);
+	
+	cout << Number << endl;
+}
+
+void CoutReset()
+{
+	cout << defaultfloat;
+}
+
 float GetDouble(const char PromptMessage[], const char FailMessage[])
 {
 	float d_Number;
@@ -57,7 +78,10 @@ int GetInt(const char PromptMessage[], const char FailMessage[])
 		}
 		else
 		{
-			return round(f_Number);
+			if (round(f_Number) == f_Number)
+				return round(f_Number);
+			else
+				cout << FailMessage << "\n";
 		}
 	}
 }

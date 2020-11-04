@@ -2,17 +2,17 @@
 
 double RoundTo(double number, int decimalPlace);
 /*
-*	Round double number to a specific decimal place
+*	Round the number to specified precision (number of digits after the decimal point)
 */
 
 float GetDouble(const char promptMessage[], const char failMessage[]);
 /*
-*	Get double number from user in console using promptMessage for asking and failMessage if input is incorrect
+*	Get double number from user in console using promptMessage and failMessage
 */
 
 int GetInt(const char promptMessage[], const char failMessage[]);
-/*	
-*	Get integer number from user in console using promptMessage for asking and failMessage if input is incorrect
+/*
+*	Get integer number from user in console using promptMessage and failMessage
 */
 
 double Minimum(double number1, double number2);
@@ -26,14 +26,14 @@ void SetDefaults();
 */
 
 void PrintFormatted(const char name[], double number, int width, int precision, bool align);
-/* 
+/*
 *	Formatted printing.
-* 
-*	name - number's name to show
-*	number - number itself
-*	width - parameter for setw() func. Setting it to 0 disables it
-*	precision - parameter for setprecision() func. Setting it to 0 disables it
-*	align - if true, Number will be with fixed decimal place on the screen, if false, it will be not
+*
+*	name      - number's name to show
+*	number    - number itself
+*	width     - number of digits to show (0 to igonre)
+*	precision - number of digits after decimal point (0 to igonre)
+*	align     - whether to align numbers by a decimal point
 */
 
 void CoutReset();

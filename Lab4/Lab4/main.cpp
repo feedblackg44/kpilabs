@@ -10,7 +10,7 @@ using namespace std;
 
 int main()
 {
-	EventProgramLoad();
+	SetDefaults();
 	
 	double y0 = 1.0;
 	double x0 = 1.0;
@@ -27,11 +27,11 @@ int main()
 		x0 = x1;
 		y0 = y1;
 
-		PrintFormated("x", x1, 12, 8, true);
-		PrintFormated("y", y1, 12, 8, true);
+		PrintFormatted("x", x1, 12, 8, true);
+		PrintFormatted("y", y1, 12, 8, true);
 	}
 
-	PrintFormated("x(n)", x1, 0, 9, false);
+	PrintFormatted("x(n)", x1, 0, 9, false);
 
 	system("pause");
 	return 0;

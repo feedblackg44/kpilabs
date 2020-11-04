@@ -9,7 +9,7 @@ using namespace std;
 
 int main()
 {
-	EventProgramLoad();
+	SetDefaults();
 
 	double x1, x0;
 	double e = 0.0001;

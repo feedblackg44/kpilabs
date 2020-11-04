@@ -7,50 +7,29 @@
 
 using namespace std;
 
-void EventProgramLoad()
+void SetDefaults()
 {
 	setlocale(LC_ALL, "ru-RU.UTF-8");
 }
 
-double RoundTo(double Number, int DecimalPlace)
+double RoundTo(double number, int decimalPlace)
 {
-	double D = round(Number * pow(10, DecimalPlace)) / pow(10, DecimalPlace);
+	double D = round(number * pow(10, decimalPlace)) / pow(10, decimalPlace);
 	return D;
 }
 
-void PrintFormated(const char NumberName[], double Number, int weight, int precision, bool Fixed)
-{
-	cout << NumberName << " = ";
-	
-	if (Fixed)
-		cout << fixed;
-	else
-		cout << defaultfloat;
-	if (weight > 0)
-		cout << setw(weight);
-	if (precision > 0)
-		cout << setprecision(precision);
-	
-	cout << Number << endl;
-}
-
-void CoutReset()
-{
-	cout << defaultfloat;
-}
-
-float GetDouble(const char PromptMessage[], const char FailMessage[])
+float GetDouble(const char promptMessage[], const char failMessage[])
 {
 	float d_Number;
 
 	while (true)
 	{
-		cout << PromptMessage << "\n";
+		cout << promptMessage << "\n";
 		cin >> d_Number;
 
 		if (cin.fail())
 		{
-			cout << FailMessage << "\n";
+			cout << failMessage << "\n";
 			cin.clear();
 			cin.ignore(numeric_limits<streamsize>::max(), '\n');
 		}
@@ -61,18 +40,18 @@ float GetDouble(const char PromptMessage[], const char FailMessage[])
 	}
 }
 
-int GetInt(const char PromptMessage[], const char FailMessage[])
+int GetInt(const char promptMessage[], const char failMessage[])
 {
 	float f_Number;
 
 	while (true)
 	{
-		cout << PromptMessage << "\n";
+		cout << promptMessage << "\n";
 		cin >> f_Number;
 
 		if (cin.fail())
 		{
-			cout << FailMessage << "\n";
+			cout << failMessage << "\n";
 			cin.clear();
 			cin.ignore(numeric_limits<streamsize>::max(), '\n');
 		}
@@ -81,15 +60,37 @@ int GetInt(const char PromptMessage[], const char FailMessage[])
 			if (round(f_Number) == f_Number)
 				return round(f_Number);
 			else
-				cout << FailMessage << "\n";
+				cout << failMessage << "\n";
 		}
 	}
 }
 
-double Minimum(double Number1, double Number2)
+double Minimum(double number1, double number2)
 {
-	if (Number1 < Number2)
-		return Number1;
+	if (number1 < number2)
+		return number1;
 	else
-		return Number2;
+		return number2;
+}
+
+
+void PrintFormatted(const char name[], double number, int width, int precision, bool align)
+{
+	cout << name << " = ";
+
+	if (align)
+		cout << fixed;
+	else
+		cout << defaultfloat;
+	if (width > 0)
+		cout << setw(width);
+	if (precision > 0)
+		cout << setprecision(precision);
+
+	cout << number << endl;
+}
+
+void CoutReset()
+{
+	cout << defaultfloat;
 }

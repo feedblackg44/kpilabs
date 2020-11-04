@@ -2,22 +2,22 @@
 
 double RoundTo(double number, int decimalPlace);
 /*
-	Round double Number to a specific decimal place
+*	Round double number to a specific decimal place
 */
 
 float GetDouble(const char promptMessage[], const char failMessage[]);
 /*
-	Get double Number from user in console using PromptMessage for asking and FailMessage if input is incorrect
+*	Get double number from user in console using promptMessage for asking and failMessage if input is incorrect
 */
 
 int GetInt(const char promptMessage[], const char failMessage[]);
 /*	
-*	Get integer Number from user in console using PromptMessage for asking and FailMessage if input is incorrect
+*	Get integer number from user in console using promptMessage for asking and failMessage if input is incorrect
 */
 
 double Minimum(double number1, double number2);
 /*
-*	Return minimum Number of two numbers
+*	Return minimum number of two numbers
 */
 
 void SetDefaults();

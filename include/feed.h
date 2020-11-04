@@ -12,3 +12,6 @@ int GetInt(const char PromptMessage[], const char FailMessage[]);
 
 // Return minimum Number of two numbers
 double Minimum(double Number1, double Number2);
+
+// Everything that need to be done at the start of the program
+void EventProgramLoad();

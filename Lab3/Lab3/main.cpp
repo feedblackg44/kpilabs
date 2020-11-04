@@ -9,16 +9,13 @@ using namespace std;
 
 int main()
 {
-	setlocale(LC_ALL, "ru-RU.UTF-8");
+	EventProgramLoad();
 
 	double x1, x0;
 	double e = 0.0001;
 
-	cout << "Вычислим примерно корень пятой степени из а." << endl;
+	cout << "Вычислим корень пятой степени из а с точностью до " << e << "." << endl;
 	double a = GetDouble("Введите число a:", "Число введено неправильно!");
-
-	ios init(NULL);
-	init.copyfmt(cout);
 
 	if (a <= 1)
 		x0 = Minimum(2. * a, 0.95);
@@ -33,12 +30,10 @@ int main()
 	{
 		x0 = x1;
 		x1 = (4. * x0 / 5.) + (a / (5. * pow(x0, 4)));
-		cout << "x =" << setw(12) << setprecision(8) << fixed << x1 << endl;
+		cout << "x =" << setw(12) << setprecision(8) << fixed  << x1 << endl;
 	}
 
-	cout.copyfmt(init);
-
-	cout << "Корень пятой степени из "<< a << " с точностью до " << e << " равен " << setprecision(8) << x1 << endl;
+	cout << defaultfloat << "Корень пятой степени из "<< a << " с точностью до " << e << " равен " << setprecision(9) << x1 << endl;
 
 	system("pause");
 	return 0;

@@ -7,6 +7,11 @@
 
 using namespace std;
 
+void EventProgramLoad()
+{
+	setlocale(LC_ALL, "ru-RU.UTF-8");
+}
+
 double RoundTo(double Number, int DecimalPlace)
 {
 	double D = round(Number * pow(10, DecimalPlace)) / pow(10, DecimalPlace);

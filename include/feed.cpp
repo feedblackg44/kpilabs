@@ -3,6 +3,7 @@
 #include <limits>
 #include <locale.h>
 #include <iomanip>
+#include <cstring>
 #include "feed.h"
 
 #ifdef _WIN32
@@ -26,9 +27,9 @@ double RoundTo(double number, int decimalPlace)
 	return D;
 }
 
-float GetDouble(const char promptMessage[], const char failMessage[])
+double GetDouble(const char promptMessage[], const char failMessage[])
 {
-	float d_Number;
+	double d_Number;
 
 	while (true)
 	{
@@ -105,7 +106,7 @@ void PrintSlow(const char str[], int delay, bool endline)
 	for (int i = 0; i < count; i++)
 	{
 		cout << str[i];
-		Sleep(delay);
+		SleepFor(delay);
 	}
 	if (endline)
 		cout << endl;
@@ -114,4 +115,13 @@ void PrintSlow(const char str[], int delay, bool endline)
 void CoutReset()
 {
 	cout << defaultfloat;
+}
+
+void SleepFor(int milliseconds)
+{
+#ifdef _WIN32
+	Sleep(milliseconds);
+#else
+	Usleep(milliseconds);
+#endif
 }

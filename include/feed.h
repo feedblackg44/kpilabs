@@ -5,7 +5,7 @@ double RoundTo(double number, int decimalPlace);
 *	Round the number to specified precision (number of digits after the decimal point)
 */
 
-float GetDouble(const char promptMessage[], const char failMessage[]);
+double GetDouble(const char promptMessage[], const char failMessage[]);
 /*
 *	Get double number from user in console using promptMessage and failMessage
 */
@@ -49,3 +49,5 @@ void CoutReset();
 /*
 *	Reset current output stream flags
 */
+
+void SleepFor(int milliseconds);

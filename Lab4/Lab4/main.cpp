@@ -4,14 +4,11 @@
 #include <locale.h>
 #include <iomanip>
 #include <string>
+#include <cstring>
 #include "feed.h"
 #include "functions.h"
 
-#ifdef _WIN32
-#include <Windows.h>
-#else
-#include <unistd.h>
-#endif
+#define DEFAULT_DELAY 20
 
 using namespace std;
 
@@ -22,7 +19,6 @@ int main()
 	int n, a, b, t;
 	int sum = 0;
 	bool mode;
-	string x;
 
 	do
 	{
@@ -31,17 +27,17 @@ int main()
 			cout << "Число введено неправильно!" << endl;
 	} while (n <= 0);
 
-	Sleep(1000);
+	SleepFor(1000);
 	system("cls");
 
-	PrintSlow("Есть два режима вывода суммы:\n1) Все слагаемые складываются в столбик.\n2) Каждое действие проводится по очереди в отдельной строчке.", 20, true);
+	PrintSlow("Есть два режима вывода суммы:\n1) Каждое действие проводится по очереди в отдельной строчке.\n2) Все слагаемые складываются в столбик.", DEFAULT_DELAY, true);
 
-	mode = GetBool("Введте номер режима, в котором должна работать программа:", "Число режима введено неправильно!");
+	mode = GetBool("Введите номер режима, в котором должна работать программа:", "Число режима введено неправильно!");
 
-	Sleep(1000);
+	SleepFor(1000);
 	system("cls");
 
-	PrintSlow("Посчитаем:", 20, true);
+	PrintSlow("Посчитаем:", DEFAULT_DELAY, true);
 
 	for (int i = 1; i <= n; i++)
 	{
@@ -58,38 +54,46 @@ int main()
 
 		t = (a - b) * (a - b);
 
-		Sleep(150);
+		SleepFor(150);
 		
 		if (mode)
 		{
 			string str = to_string(i) + ") " + to_string(sum);
 			const char* str_to_print = str.c_str();
-			PrintSlow(str_to_print, 20, false);
+			PrintSlow(str_to_print, DEFAULT_DELAY, false);
 
 			sum += t;
 
 			str = " + " + to_string(t) + " = " + to_string(sum);
 			str_to_print = str.c_str();
-			PrintSlow(str_to_print, 20, true);
+			PrintSlow(str_to_print, DEFAULT_DELAY, true);
 		}
 		else
 		{
-			x = i != 1 ? "+\n" : "";
+			string x = i != 1 ? "+\n" : "";
 
-			cout << x << t << "\n";
+			string str = x + to_string(t);
+			const char* str_to_print = str.c_str();
+			PrintSlow(str_to_print, DEFAULT_DELAY, true);
+
+			//cout << x << t << "\n";
 
 			sum += t;
 
 			if (i == n)
-				cout << "=\n" << sum << endl;
+			{
+				str = "=\n" + to_string(sum);
+				str_to_print = str.c_str();
+				PrintSlow(str_to_print, DEFAULT_DELAY, true);
+				
+				//cout << "=\n" << sum << endl;
+			}
 		}
 	}
 
-	//Sleep(150);
-
 	string str = "\nСумма ряда равна " + to_string(sum);
 	const char* str_to_print = str.c_str();
-	PrintSlow(str_to_print, 20, true);
+	PrintSlow(str_to_print, DEFAULT_DELAY, true);
 
 	system("pause");
 	return 0;

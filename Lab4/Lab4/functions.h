@@ -1,3 +1,3 @@
 #pragma once
 
-// Functions defines here
+bool GetBool(const char promptMessage[], const char failMessage[]);

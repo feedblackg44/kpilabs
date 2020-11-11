@@ -12,26 +12,44 @@ int main()
 {
 	SetDefaults();
 	
-	double y0 = 1.0;
-	double x0 = 1.0;
-	double x1 = 0.0;
-	double y1 = 0.0;
+	int n, a, b, t;
+	int sum = 0;
 
-	int n = GetInt("Введите порядковый номер нужного элемента x(n):", "Порядковый номер введён неправильно!");
+	string x;
+
+	do
+	{
+		n = GetInt("Введите натуральное число:", "Число введено неправильно!");
+	} while (n <= 0);
+
+	cout << "Посчитаем:" << endl;
 
 	for (int i = 1; i <= n; i++)
 	{
-		x1 = x0 + (y0 / pow(i, 2.0));
-		y1 = y0 + (x0 / i);
+		if (i % 2 == 1)
+		{
+			a = i;
+			b = i * i;
+		}
+		else
+		{
+			a = i / 2;
+			b = i + 7;
+		}
 
-		x0 = x1;
-		y0 = y1;
+		t = (a - b) * (a - b);
 
-		PrintFormatted("x", x1, 12, 8, true);
-		PrintFormatted("y", y1, 12, 8, true);
+		sum += t;
+
+		x = i != 1 ? "+\n" : "";
+
+		cout << x << t << "\n";
+
+		if (i == n)
+			cout << "=\n" << sum << endl;
 	}
 
-	PrintFormatted("x(n)", x1, 0, 9, false);
+	cout << "\nСумма ряда равна " << sum << endl;
 
 	system("pause");
 	return 0;

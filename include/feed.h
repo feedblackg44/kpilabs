@@ -36,6 +36,15 @@ void PrintFormatted(const char name[], double number, int width, int precision, 
 *	align     - whether to align numbers by a decimal point
 */
 
+void PrintSlow(const char str[], int delay, bool endline);
+/*
+*	Slow animated-like printing.
+* 
+*	str		- string to print
+*	delay	- delay between printing symbols (milliseconds)
+*	endline - whether to print an endline symbol
+*/
+
 void CoutReset();
 /*
 *	Reset current output stream flags

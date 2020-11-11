@@ -5,6 +5,14 @@
 #include <iomanip>
 #include "feed.h"
 
+#ifdef _WIN32
+#include <Windows.h>
+#else
+#include <unistd.h>
+#endif
+
+#undef max
+
 using namespace std;
 
 void SetDefaults()
@@ -88,6 +96,19 @@ void PrintFormatted(const char name[], double number, int width, int precision, 
 		cout << setprecision(precision);
 
 	cout << number << endl;
+}
+
+void PrintSlow(const char str[], int delay, bool endline)
+{
+	int count = strlen(str);
+
+	for (int i = 0; i < count; i++)
+	{
+		cout << str[i];
+		Sleep(delay);
+	}
+	if (endline)
+		cout << endl;
 }
 
 void CoutReset()

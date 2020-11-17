@@ -51,5 +51,11 @@ void CoutReset();
 */
 
 void SleepFor(int milliseconds);
+/*
+*	Program sleep time in milliseconds (same for Linux and Win)
+*/
 
 void ClearScr();
+/*
+*	Clear screen in milliseconds (same for Linux and Win)
+*/

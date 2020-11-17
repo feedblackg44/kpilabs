@@ -54,7 +54,7 @@ int main()
 
 		t = (a - b) * (a - b);
 
-		SleepFor(150);
+		//SleepFor(150);
 		
 		if (mode)
 		{

@@ -124,7 +124,8 @@ void SleepFor(int milliseconds)
 #ifdef _WIN32
 	Sleep(milliseconds);
 #else
-	Usleep(milliseconds);
+	milliseconds *= 1000;
+	usleep(milliseconds);
 #endif
 }
 

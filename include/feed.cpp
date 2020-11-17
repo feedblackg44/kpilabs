@@ -8,8 +8,10 @@
 
 #ifdef _WIN32
 #include <Windows.h>
+#define ClearScreen "cls"
 #else
 #include <unistd.h>
+#define ClearScreen "clear"
 #endif
 
 #undef max
@@ -124,4 +126,9 @@ void SleepFor(int milliseconds)
 #else
 	Usleep(milliseconds);
 #endif
+}
+
+void ClearScr()
+{
+	system(ClearScreen);
 }

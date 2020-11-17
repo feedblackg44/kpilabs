@@ -51,3 +51,5 @@ void CoutReset();
 */
 
 void SleepFor(int milliseconds);
+
+void ClearScr();

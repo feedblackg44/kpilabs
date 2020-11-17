@@ -28,14 +28,14 @@ int main()
 	} while (n <= 0);
 
 	SleepFor(1000);
-	system("cls");
+	ClearScr();
 
 	PrintSlow("Есть два режима вывода суммы:\n1) Каждое действие проводится по очереди в отдельной строчке.\n2) Все слагаемые складываются в столбик.", DEFAULT_DELAY, true);
 
 	mode = GetBool("Введите номер режима, в котором должна работать программа:", "Число режима введено неправильно!");
 
 	SleepFor(1000);
-	system("cls");
+	ClearScr();
 
 	PrintSlow("Посчитаем:", DEFAULT_DELAY, true);
 

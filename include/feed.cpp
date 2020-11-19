@@ -25,7 +25,7 @@ using namespace std;
 void SetDefaults()
 {
 	setlocale(LC_ALL, "ru-RU.UTF-8");
-	//BirthdayParty();
+	BirthdayParty();
 }
 
 double RoundTo(double number, int decimalPlace)
@@ -141,21 +141,25 @@ void ClearScr()
 
 void SystemPause()
 {
+#ifdef _WIN32
+	system("pause");
+#else
 	cout << "Press any key to continue . . .";
 	cin.ignore(numeric_limits<streamsize>::max(), '\n');
 	cin.get();
 	cout << endl;
+#endif
 }
 
-/*void BirthdayParty()
+void BirthdayParty()
 {
 	time_t t = time(NULL);
 	tm* timePtr = localtime(&t);
 
-	if ((timePtr->tm_mday).copmare(to_string(19)) ==  && (timePtr->tm_mon) == to_string(11))
+	if ((timePtr->tm_mday == 3) && (timePtr->tm_mon + 1 == 12))
 	{
-		cout << "Давайте поздравим с Днём Рождения разработчика - Плостака Илью :)" << endl;
+		cout << "Давайте поздравим с Днём Рождения разработчика - Плостака Илью :)\n" << endl;
 		SystemPause();
 		ClearScr();
 	}
-}*/
+}

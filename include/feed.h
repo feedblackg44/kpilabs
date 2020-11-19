@@ -65,7 +65,7 @@ void SystemPause();
 *	Cross-platform system pause
 */
 
-//void BirthdayParty();
+void BirthdayParty();
 /*
 *	:)
 */

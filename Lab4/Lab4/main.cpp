@@ -93,8 +93,8 @@ int main()
 		}
 	}
 
-	string str = "\nСумма ряда равна " + to_string(sum);
-	const char* str_to_print = str.c_str();
+	string str = "\nСумма ряда равна " + to_string(sum);				// Перевод символов и чисел в одну строку
+	const char* str_to_print = str.c_str();								// Перевод string в const char* для использования фунцкии PrintSlow
 	PrintSlow(str_to_print, DEFAULT_DELAY, true);
 
 	SystemPause();

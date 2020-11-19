@@ -8,7 +8,7 @@
 
 using namespace std;
 
-bool GetBool(const char promptMessage[], const char failMessage[])
+bool GetMode(const char promptMessage[], const char failMessage[])
 {
 	int i_Number;
 

@@ -59,3 +59,13 @@ void ClearScr();
 /*
 *	Clear screen in milliseconds (same for Linux and Win)
 */
+
+void SystemPause();
+/*
+*	Cross-platform system pause
+*/
+
+//void BirthdayParty();
+/*
+*	:)
+*/

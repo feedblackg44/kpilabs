@@ -3,8 +3,12 @@
 #include <limits>
 #include <locale.h>
 #include <iomanip>
+#include <string>
 #include <cstring>
+#include <ctime>
 #include "feed.h"
+
+#pragma warning(disable : 4996)
 
 #ifdef _WIN32
 #include <Windows.h>
@@ -21,6 +25,7 @@ using namespace std;
 void SetDefaults()
 {
 	setlocale(LC_ALL, "ru-RU.UTF-8");
+	//BirthdayParty();
 }
 
 double RoundTo(double number, int decimalPlace)
@@ -133,3 +138,24 @@ void ClearScr()
 {
 	system(ClearScreen);
 }
+
+void SystemPause()
+{
+	cout << "Press any key to continue . . .";
+	cin.ignore(numeric_limits<streamsize>::max(), '\n');
+	cin.get();
+	cout << endl;
+}
+
+/*void BirthdayParty()
+{
+	time_t t = time(NULL);
+	tm* timePtr = localtime(&t);
+
+	if ((timePtr->tm_mday).copmare(to_string(19)) ==  && (timePtr->tm_mon) == to_string(11))
+	{
+		cout << "Давайте поздравим с Днём Рождения разработчика - Плостака Илью :)" << endl;
+		SystemPause();
+		ClearScr();
+	}
+}*/

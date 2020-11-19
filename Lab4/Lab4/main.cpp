@@ -16,9 +16,11 @@ int main()
 {
 	SetDefaults();
 	
-	int n, a, b, t;
-	int sum = 0;
-	bool mode;
+	int n,					// Количество чисел ряда
+		a, b,				// Числа а и b для вычисления слагаемого t
+		t;					// Слагаемое, прибавляемое к сумме
+	int sum = 0;			// Сумма
+	bool mode;				// Режим вывода суммы
 
 	do
 	{
@@ -27,7 +29,7 @@ int main()
 			cout << "Число введено неправильно!" << endl;
 	} while (n <= 0);
 
-	SleepFor(1000);
+	SleepFor(1000);			// Система ждёт 1 секунду
 	//ClearScr();
 	cout << endl;
 
@@ -35,7 +37,7 @@ int main()
 
 	mode = GetMode("Введите номер режима, в котором должна работать программа:", "Число режима введено неправильно!");
 
-	SleepFor(1000);
+	SleepFor(1000);			// Система ждёт 1 секунду
 	//ClearScr();
 	cout << endl;
 
@@ -60,32 +62,30 @@ int main()
 		
 		if (mode)
 		{
-			string str = to_string(i) + ") " + to_string(sum);
-			const char* str_to_print = str.c_str();
+			string str = to_string(i) + ") " + to_string(sum);			// Перевод символов и чисел в одну строку
+			const char* str_to_print = str.c_str();						// Перевод string в const char* для использования фунцкии PrintSlow
 			PrintSlow(str_to_print, DEFAULT_DELAY, false);
 
 			sum += t;
 
-			str = " + " + to_string(t) + " = " + to_string(sum);
-			str_to_print = str.c_str();
+			str = " + " + to_string(t) + " = " + to_string(sum);		// Перевод символов и чисел в одну строку
+			str_to_print = str.c_str();									// Перевод string в const char* для использования фунцкии PrintSlow
 			PrintSlow(str_to_print, DEFAULT_DELAY, true);
 		}
 		else
 		{
 			string x = i != 1 ? "+\n" : "";
 
-			string str = x + to_string(t);
-			const char* str_to_print = str.c_str();
+			string str = x + to_string(t);								// Перевод символов и чисел в одну строку
+			const char* str_to_print = str.c_str();						// Перевод string в const char* для использования фунцкии PrintSlow
 			PrintSlow(str_to_print, DEFAULT_DELAY, true);
-
-			//cout << x << t << "\n";
 
 			sum += t;
 
 			if (i == n)
 			{
-				str = "=\n" + to_string(sum);
-				str_to_print = str.c_str();
+				str = "=\n" + to_string(sum);							// Перевод символов и чисел в одну строку
+				str_to_print = str.c_str();								// Перевод string в const char* для использования фунцкии PrintSlow
 				PrintSlow(str_to_print, DEFAULT_DELAY, true);
 				
 				//cout << "=\n" << sum << endl;
@@ -97,6 +97,6 @@ int main()
 	const char* str_to_print = str.c_str();
 	PrintSlow(str_to_print, DEFAULT_DELAY, true);
 
-	system("pause");
+	SystemPause();
 	return 0;
 }

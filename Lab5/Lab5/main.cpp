@@ -56,7 +56,7 @@ int main()
             }
 
             string divider;
-            if ((amount % 10 <= 4 || amount % 10 >= 2) && (amount % 100 < 12 || amount % 100 > 14))
+            if (amount % 10 <= 4 && amount % 10 >= 2 && (amount % 100 < 12 || amount % 100 > 14))
                 divider = " делителя";
             else if (amount % 10 == 1 && amount % 100 != 11)
                 divider = " делитель";

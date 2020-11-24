@@ -35,7 +35,7 @@ int main()
     n0 = ceil(a);
     n1 = floor(b);
     
-    if (n0 <= n1 && n0 > 0 && n1 >= 1)
+    if (n0 <= n1 && n1 - n0 > 0)
     {
         for (int i = n0; i <= n1; i++)
         {
@@ -61,7 +61,7 @@ int main()
         }
     }
     else
-        cout << "В данном промежутке нет натуральных чисел";
+        cout << "В данном промежутке нет натуральных чисел" << endl;
 
     SystemPause();
     return 0;

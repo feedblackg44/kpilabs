@@ -19,44 +19,49 @@ int main()
           amount,                      // Количество делителей текущего натурального числа
           sum;                         // Сумма делителей текущего натурального числа
 
-    a = GetDouble("Введите нижнюю границу промеужтка [a;b]:", "Граница введена некорректно!");
-    b = GetDouble("Введите верхнюю границу промеужтка [a;b]:", "Граница введена некорректно!");
+    while (true)
+    {
+        a = GetDouble("Введите нижнюю границу промеужтка [a;b]:", "Граница введена некорректно!");
+        b = GetDouble("Введите верхнюю границу промеужтка [a;b]:", "Граница введена некорректно!");
+        if (a > b)
+            cout << "Нижняя граница должна быть меньше или равна верхней границе!" << endl;
+        else
+            break;
+    } 
 
     a = RoundTo(a, 8);
     b = RoundTo(b, 8);
 
-    if (a <= 0)
-        n0 = 1;
-    else
-        n0 = ceil(a);
+    n0 = ceil(a);
+    n1 = floor(b);
     
-    if (b <= 0)
-        n1 = 1;
-    else
-        n1 = floor(b);
-
-    for (int i = n0; i <= n1; i++)
+    if (n0 <= n1 && n0 > 0 && n1 >= 1)
     {
-        amount = 0;
-        sum = 0;
-
-        for (int j = 1; j <= i; j++)
+        for (int i = n0; i <= n1; i++)
         {
-            if (float(i) / float(j) == i / j)
+            amount = 0;
+            sum = 0;
+
+            for (int j = 1; j <= i; j++)
             {
-                amount++;
-                sum += j;
+                if (float(i) / float(j) == i / j)
+                {
+                    amount++;
+                    sum += j;
+                }
             }
+
+            string divider;
+            if (amount % 10 <= 4 && (amount % 100 < 11 || amount % 100 > 14))
+                divider = " делителя";
+            else
+                divider = " делителей";
+
+            cout << "Для числа " << i << " существует " << amount << divider << ", а их сумма равна " << sum << "." << endl;
         }
-
-        string divider;
-        if (amount % 10 <= 4 && (amount % 100 < 11 || amount % 100 > 14))
-            divider = " делителя";
-        else
-            divider = " делителей";
-
-        cout << "Для числа " << i << " существует " << amount << divider << ", а их сумма равна " << sum << "." << endl;
     }
+    else
+        cout << "В данном промежутке нет натуральных чисел";
 
     SystemPause();
     return 0;

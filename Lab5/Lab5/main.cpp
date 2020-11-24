@@ -39,7 +39,7 @@ int main()
 
     n1 = floor(b);
     
-    if (n0 <= n1 && n1 - n0 > 0)
+    if (n0 <= n1)
     {
         for (int i = n0; i <= n1; i++)
         {

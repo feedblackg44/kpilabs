@@ -25,8 +25,15 @@ int main()
     a = RoundTo(a, 8);
     b = RoundTo(b, 8);
 
-    n0 = ceil(a);
-    n1 = floor(b);
+    if (a <= 0)
+        n0 = 1;
+    else
+        n0 = ceil(a);
+    
+    if (b <= 0)
+        n1 = 1;
+    else
+        n1 = floor(b);
 
     for (int i = n0; i <= n1; i++)
     {

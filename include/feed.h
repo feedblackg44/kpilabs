@@ -1,5 +1,7 @@
 #pragma once
 
+#define DEFAULT_DELAY 20
+
 double RoundTo(double number, int decimalPlace);
 /*
 *    Round the number to specified precision (number of digits after the decimal point)

@@ -32,14 +32,9 @@ int main()
     a = RoundTo(a, 8);
     b = RoundTo(b, 8);
 
-    if (a <= 0)
-        n0 = 1;
-    else
-        n0 = ceil(a);
+    n0 = a <= 0 ? 1 : ceil(a);
 
     n1 = floor(b);
-
-    SystemPause();
 
     if (n0 <= n1)
     {

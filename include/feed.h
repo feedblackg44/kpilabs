@@ -1,6 +1,6 @@
 #pragma once
 
-#define DEFAULT_DELAY 20
+#define DEFAULT_DELAY 20        // Default delay for PrintFormatted func
 
 double RoundTo(double number, int decimalPlace);
 /*

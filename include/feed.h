@@ -1,7 +1,10 @@
 #pragma once
 
 #define DEFAULT_DELAY 20        // Default delay for PrintFormatted func
+
+#ifndef M_PI
 #define M_PI acos(-1.0)
+#endif
 
 double RoundTo(double number, int decimalPlace);
 /*

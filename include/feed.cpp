@@ -178,9 +178,9 @@ const char* Declination(const char pluralWord234[], const char singleWord[], con
     if (amount % 10 <= 4 && amount % 10 >= 2 && (amount % 100 < 12 || amount % 100 > 14))
         resultWord = pluralWord234;
     else if (amount % 10 == 1 && amount % 100 != 11)
-        resultWord = pluralWord;
-    else
         resultWord = singleWord;
+    else
+        resultWord = pluralWord;
 
     return resultWord;
 }

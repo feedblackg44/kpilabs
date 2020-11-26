@@ -18,7 +18,7 @@ double Integral(double bottomBorder, double upperBorder, int number, bool firstF
     {
         x = bottomBorder + i * h - h / 2;
         
-        result += firstFunc ? result += atan(x)*atan(x) : log(2+sin(x));
+        result += firstFunc ? log(2 + sin(x)) : atan(x) * atan(x);
     }
 
     result *= h;

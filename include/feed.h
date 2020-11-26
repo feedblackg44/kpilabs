@@ -71,3 +71,8 @@ void BirthdayParty();
 /*
 *    :)
 */
+
+void LabHeader(int index);
+/*
+*    Shows index number of lab work, name and group
+*/

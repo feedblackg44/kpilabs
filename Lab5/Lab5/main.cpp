@@ -11,6 +11,7 @@ using namespace std;
 int main()
 {
     SetDefaults();
+    LabHeader(4);
     
     double   a,                           // Нижняя (левая) граница промежутка
              b;                           // Верхняя (правая) граница промежутка

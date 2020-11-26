@@ -13,6 +13,7 @@ using namespace std;
 int main()
 {
     SetDefaults();
+    LabHeader(4);
     
     int  n,                  // Количество чисел ряда
          a, b,               // Числа а и b для вычисления слагаемого t

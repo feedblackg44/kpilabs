@@ -163,3 +163,10 @@ void BirthdayParty()
         ClearScr();
     }
 }
+
+void LabHeader(int index)
+{
+    cout << "Лабораторная работа №" << index << endl;
+    cout << "Выполнил: Плостак Илья" << endl;
+    cout << "Группа: ИС-02\n" << endl;
+}

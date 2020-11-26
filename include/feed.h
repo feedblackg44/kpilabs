@@ -1,6 +1,7 @@
 #pragma once
 
 #define DEFAULT_DELAY 20        // Default delay for PrintFormatted func
+#define M_PI acos(-1.0)
 
 double RoundTo(double number, int decimalPlace);
 /*
@@ -74,5 +75,10 @@ void BirthdayParty();
 
 void LabHeader(int index);
 /*
-*    Shows index number of lab work, name and group
+*    Show index number of lab work, name and group
+*/
+
+const char* Declination(const char pluralWord234[], const char singleWord[], const char pluralWord[], int amount);
+/*
+*    Get correct word form in dependance of its amount
 */

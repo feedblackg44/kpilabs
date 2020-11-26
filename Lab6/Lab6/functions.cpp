@@ -1,11 +1,27 @@
 #include <iostream>
-#include <math.h>
+#include <cmath>
 #include <limits>
-#include <locale.h>
+#include <locale>
 #include <iomanip>
 #include "feed.h"
 #include "functions.h"
 
 using namespace std;
 
-// Functions here
+double Integral(double bottomBorder, double upperBorder, int number, bool firstFunc)
+{
+    double h = (upperBorder - bottomBorder) / number;
+    double x;
+    double result = 0;
+
+    for (int i = 1; i <= number; i++)
+    {
+        x = bottomBorder + i * h - h / 2;
+        
+        result += firstFunc ? result += atan(x)*atan(x) : log(2+sin(x));
+    }
+
+    result *= h;
+
+    return result;
+}

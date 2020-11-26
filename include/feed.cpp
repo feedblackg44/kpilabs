@@ -1,7 +1,7 @@
 #include <iostream>
-#include <math.h>
+#include <cmath>
 #include <limits>
-#include <locale.h>
+#include <locale>
 #include <iomanip>
 #include <string>
 #include <cstring>
@@ -169,4 +169,18 @@ void LabHeader(int index)
     cout << "Лабораторная работа №" << index << endl;
     cout << "Выполнил: Плостак Илья" << endl;
     cout << "Группа: ИС-02\n" << endl;
+}
+
+const char* Declination(const char pluralWord234[], const char singleWord[], const char pluralWord[], int amount)
+{
+    const char* resultWord;
+
+    if (amount % 10 <= 4 && amount % 10 >= 2 && (amount % 100 < 12 || amount % 100 > 14))
+        resultWord = pluralWord234;
+    else if (amount % 10 == 1 && amount % 100 != 11)
+        resultWord = pluralWord;
+    else
+        resultWord = singleWord;
+
+    return resultWord;
 }

@@ -1,8 +1,10 @@
 #include <iostream>
-#include <math.h>
+#include <cmath>
 #include <limits>
-#include <locale.h>
+#include <locale>
 #include <iomanip>
+#include <string>
+#include <cstring>
 #include "feed.h"
 #include "functions.h"
 
@@ -11,8 +13,23 @@ using namespace std;
 int main()
 {
     SetDefaults();
+    LabHeader(6);
+    cout << "Программа считает определённый интеграл от заданной функции методом прямоугольников для заданных пользователем промежутка и количества элементарных отрезков.\n" << endl;
     
-    
+    int     n;                  // Количество элементарных отрезков на которое будет разбит интервал интегрирования
+    double  a,                  // Нижняя граница интеграла
+            b,                  // Верхняя граница интеграла
+            result;             // Результат вычислений
+
+    a = GetDouble("Введите нижнюю границу интеграла:", "Граница введена неправильно!");
+    b = GetDouble("Введите верхнюю границу интеграла:", "Граница введена неправильно!");
+    n = GetInt("Введите количество элементарных отрезков на которое будет разбит интервал интегрирования:", "Количество введено неправильно!");
+
+    result = Integral(a, b, n, true) + Integral(0, M_PI, n, false);
+
+    string str = Declination("отрезка", "отрезок", "отрезков", n);
+
+    cout << "Определённый интеграл на промежутке от " << a << " до " << b << " с разбиением на " << n << " элементарных " << str << " равен " << result << endl;
 
     SystemPause();
     return 0;

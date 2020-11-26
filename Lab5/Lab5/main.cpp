@@ -11,7 +11,7 @@ using namespace std;
 int main()
 {
     SetDefaults();
-    LabHeader(4);
+    LabHeader(5);
     cout << "Программа считает сумму и количество делителей для всех натуральных чисел из заданного пользователем промежутка.\n" << endl;
     
     double   a,                           // Нижняя (левая) граница промежутка
@@ -54,13 +54,7 @@ int main()
                 }
             }
 
-            string divider;
-            if (amount % 10 <= 4 && amount % 10 >= 2 && (amount % 100 < 12 || amount % 100 > 14))
-                divider = " делителя";
-            else if (amount % 10 == 1 && amount % 100 != 11)
-                divider = " делитель";
-            else
-                divider = " делителей";
+            string divider = Declination(" делителя", " делитель", " делителей", amount);
 
             cout << "Для числа " << i << " существует " << amount << divider << ", а их сумма равна " << sum << "." << endl;
         }

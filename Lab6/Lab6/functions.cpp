@@ -10,9 +10,9 @@ using namespace std;
 
 double Integral(double bottomBorder, double upperBorder, int number, bool firstFunc)
 {
-    double h = (upperBorder - bottomBorder) / number;
-    double x;
-    double result = 0;
+    double h = (upperBorder - bottomBorder) / number;       // Множитель для метода прямоугольников
+    double x;                                               // Аргумент для выбранной функции
+    double result = 0;                                      // Результат
 
     for (int i = 1; i <= number; i++)
     {

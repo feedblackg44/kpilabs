@@ -1,4 +1,4 @@
-﻿#pragma once
+#pragma once
 
 #define DEFAULT_DELAY 20        // Default delay for PrintFormatted func
 

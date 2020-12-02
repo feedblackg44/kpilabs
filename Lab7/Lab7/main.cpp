@@ -8,4 +8,12 @@
 
 using namespace std;
 
-// Functions here
+int main()
+{
+    SetDefaults();
+    
+    cout << "Тест" << endl;
+
+    SystemPause();
+    return 0;
+}

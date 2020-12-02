@@ -1,3 +1,3 @@
-#pragma once
+﻿#pragma once
 
 // Functions defines here

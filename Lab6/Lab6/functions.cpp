@@ -1,4 +1,4 @@
-#include <iostream>
+п»ї#include <iostream>
 #include <cmath>
 #include <limits>
 #include <locale>
@@ -10,9 +10,9 @@ using namespace std;
 
 double Integral(double bottomBorder, double upperBorder, int number, bool firstFunc)
 {
-    double h = (upperBorder - bottomBorder) / number;       // Множитель для метода прямоугольников
-    double x;                                               // Аргумент для выбранной функции
-    double result = 0;                                      // Результат
+    double h = (upperBorder - bottomBorder) / number;       // РњРЅРѕР¶РёС‚РµР»СЊ РґР»СЏ РјРµС‚РѕРґР° РїСЂСЏРјРѕСѓРіРѕР»СЊРЅРёРєРѕРІ
+    double x;                                               // РђСЂРіСѓРјРµРЅС‚ РґР»СЏ РІС‹Р±СЂР°РЅРЅРѕР№ С„СѓРЅРєС†РёРё
+    double result = 0;                                      // Р РµР·СѓР»СЊС‚Р°С‚
 
     for (int i = 1; i <= number; i++)
     {

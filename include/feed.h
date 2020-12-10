@@ -21,6 +21,11 @@ int GetInt(const char promptMessage[], const char failMessage[]);
 *    Get integer number from user in console using promptMessage and failMessage
 */
 
+bool GetBool(const char promptMessage[], const char failMessage[]);
+/*
+*    Get bool value from user in console using promptMessage and failMessage
+*/
+
 double Minimum(double number1, double number2);
 /*
 *    Return minimum number of two numbers

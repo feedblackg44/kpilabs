@@ -81,6 +81,31 @@ int GetInt(const char promptMessage[], const char failMessage[])
     }
 }
 
+bool GetBool(const char promptMessage[], const char failMessage[])
+{
+    float f_Number;
+
+    while (true)
+    {
+        cout << promptMessage << "\n";
+        cin >> f_Number;
+
+        if (cin.fail())
+        {
+            cout << failMessage << "\n";
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        }
+        else
+        {
+            if (f_Number == 1 || f_Number == 0)
+                return bool(f_Number);
+            else
+                cout << failMessage << "\n";
+        }
+    }
+}
+
 double Minimum(double number1, double number2)
 {
     if (number1 < number2)

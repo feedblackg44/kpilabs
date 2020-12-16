@@ -8,18 +8,6 @@
 #include <ctime>
 #include "feed.h"
 
-#pragma warning(disable : 4996)
-
-#ifdef _WIN32
-#include <Windows.h>
-#define ClearScreen "cls"
-#else
-#include <unistd.h>
-#define ClearScreen "clear"
-#endif
-
-#undef max
-
 using namespace std;
 
 void SetDefaults()
@@ -34,7 +22,7 @@ double RoundTo(double number, int decimalPlace)
     return D;
 }
 
-double GetDouble(const char promptMessage[], const char failMessage[])
+double GetDouble(const char promptMessage[], const char failMessage[], bool clr)
 {
     double d_Number;
 
@@ -42,6 +30,9 @@ double GetDouble(const char promptMessage[], const char failMessage[])
     {
         cout << promptMessage << "\n";
         cin >> d_Number;
+
+        if (clr)
+            system(ClearScreen);
 
         if (cin.fail())
         {
@@ -56,7 +47,7 @@ double GetDouble(const char promptMessage[], const char failMessage[])
     }
 }
 
-int GetInt(const char promptMessage[], const char failMessage[])
+int GetInt(const char promptMessage[], const char failMessage[], bool clr)
 {
     float f_Number;
 
@@ -64,6 +55,9 @@ int GetInt(const char promptMessage[], const char failMessage[])
     {
         cout << promptMessage << "\n";
         cin >> f_Number;
+
+        if (clr)
+            system(ClearScreen);
 
         if (cin.fail())
         {
@@ -81,14 +75,17 @@ int GetInt(const char promptMessage[], const char failMessage[])
     }
 }
 
-bool GetBool(const char promptMessage[], const char failMessage[])
+bool GetBool(const char promptMessage[], const char failMessage[], bool clr)
 {
     float f_Number;
 
     while (true)
-    {
+    {  
         cout << promptMessage << "\n";
         cin >> f_Number;
+
+        if (clr)
+            system(ClearScreen);
 
         if (cin.fail())
         {
@@ -208,4 +205,11 @@ const char* Declination(const char pluralWord234[], const char singleWord[], con
         resultWord = pluralWord;
 
     return resultWord;
+}
+
+int RandomInInterval(int bottom, int upper)
+{
+    srand(time(NULL));
+    int output = rand() % (upper - bottom) + bottom;
+    return output;
 }

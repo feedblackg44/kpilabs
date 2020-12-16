@@ -6,22 +6,36 @@
 #define M_PI acos(-1.0)
 #endif
 
+#ifdef _WIN32
+#include <Windows.h>
+#define ClearScreen "cls"
+#else
+#include <unistd.h>
+#define ClearScreen "clear"
+#endif
+
+#pragma warning(disable : 4996)
+
+#ifdef max
+#undef max
+#endif
+
 double RoundTo(double number, int decimalPlace);
 /*
 *    Round the number to specified precision (number of digits after the decimal point)
 */
 
-double GetDouble(const char promptMessage[], const char failMessage[]);
+double GetDouble(const char promptMessage[], const char failMessage[], bool clr = false);
 /*
 *    Get double number from user in console using promptMessage and failMessage
 */
 
-int GetInt(const char promptMessage[], const char failMessage[]);
+int GetInt(const char promptMessage[], const char failMessage[], bool clr = false);
 /*
 *    Get integer number from user in console using promptMessage and failMessage
 */
 
-bool GetBool(const char promptMessage[], const char failMessage[]);
+bool GetBool(const char promptMessage[], const char failMessage[], bool clr = false);
 /*
 *    Get bool value from user in console using promptMessage and failMessage
 */
@@ -89,4 +103,9 @@ void LabHeader(int index);
 const char* Declination(const char pluralWord234[], const char singleWord[], const char pluralWord[], int amount);
 /*
 *    Get correct word form in dependance of its amount
+*/
+
+int RandomInInterval(int bottom, int upper);
+/*
+*    Get random number from selected gap
 */

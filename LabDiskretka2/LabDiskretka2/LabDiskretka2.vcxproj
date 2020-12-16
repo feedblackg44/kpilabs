@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{dc0cfc0c-8dc0-45f7-9adc-5aca179a022f}</ProjectGuid>
-    <RootNamespace>Lab7</RootNamespace>
+    <ProjectGuid>{f481b88f-00f1-48ac-aa44-2497b132d68b}</ProjectGuid>
+    <RootNamespace>LabDiskretka2</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -148,9 +148,6 @@
   <ItemGroup>
     <ClInclude Include="..\..\include\feed.h" />
     <ClInclude Include="functions.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <Text Include="Pseudocode.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

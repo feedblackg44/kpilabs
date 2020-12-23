@@ -1,53 +1,30 @@
 #include <iostream>
+#include <sstream>
 #include <math.h>
 #include <limits>
 #include <locale.h>
 #include <iomanip>
 #include <string>
-#include <cstring>
 #include "feed.h"
 #include "functions.h"
 
 using namespace std;
 
-void SplitWords(char** words, int* sizes, const char* strIn)
+void SplitStrings(string strIn, string* strOut, string* strMax)
 {
-    int size = 0;
-    int h = 0;
-    for (int i = 0; i < strlen(strIn); i++)
-    {
-        if (strIn[i] != ' ')
-        {
-            size++;
-        }
-        else if (strIn[i] != '\n')
-        {
-            size++;
-        }
-        else
-        {
-            words[h] = new char [size];
-            sizes[h++] = size;
-            size = 0;
-        }
-    }
+    string strCur;                          // Текущая строка
+    stringstream strStream;                 // Пустой поток строк
+    strStream << strIn;
 
-    int curSize = 0;
-    int k = 0;
-    for (int i = 0; i < strlen(strIn); i++)
+    bool out = true;
+    while (strStream >> strCur)
     {
-        if (strIn[i] != ' ')
+        if (out)
         {
-            words[k][i-curSize] = strIn[i];
+            (*strOut) += strCur + " ";
+            if (strCur.length() > (*strMax).length())
+                (*strMax) = strCur;
         }
-        else if (strIn[i] != '\n')
-        {
-            words[k][i-curSize] = strIn[i];
-        }
-        else
-        {
-            curSize += sizes[k] + 1;
-            k++;
-        }
+        out = !out;
     }
 }

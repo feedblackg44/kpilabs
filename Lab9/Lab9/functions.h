@@ -1,3 +1,5 @@
 #pragma once
 
-void SplitWords(char** words, int* sizes, const char* strIn);
+#include <string>
+
+void SplitStrings(std::string strIn, std::string* strOut, std::string* strMax);

@@ -11,7 +11,7 @@ using namespace std;
 int main()
 {
     SetDefaults();
-    LabHeader(4);
+    LabHeader(8);
 
     int n,                      // Количество чисел для заполнения матрицы
         size;                   // Размер матрицы

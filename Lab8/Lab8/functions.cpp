@@ -70,3 +70,39 @@ void OutputMatrix(const char matrixName[], int** matrix, int size)
     }
     cout << endl;
 }
+
+void GetMatrixSize(int *num, int *size)
+{
+    do
+    {
+        *num = GetInt("Введите количество чисел для заполнения квадратной матрицы:", "Число введено неправильно!");
+        if (!IsSqare(*num))
+        {
+            cout << "Так как матрица квадратная, число должно быть полным квадратом!" << endl;
+        }
+    } while (!IsSqare(*num));
+
+    (*size) = pow(double(*num), 0.5);
+}
+
+int** MatrixInit(int size)
+{
+    int** Matrix;
+    Matrix = new int* [size];
+    for (int i = 0; i < size; i++)
+    {
+        Matrix[i] = new int[size];
+    }
+
+    return Matrix;
+}
+
+void BuildMatrix(int** Matrix, int num, int size)
+{
+    for (int i = 1; i < 2 * size; i++)
+    {
+        bool up = i % 2 ? true : false;
+
+        num = FillDiagonal(Matrix, size, i, num, up);
+    }
+}

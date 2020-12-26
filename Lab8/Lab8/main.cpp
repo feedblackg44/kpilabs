@@ -17,33 +17,11 @@ int main()
         size;                   // Размер матрицы
     int** Matrix;               // Указатель на матрицу
 
-    while (true)
-    {
-        n = GetInt("Введите количество чисел для заполнения квадратной матрицы", "Число введено неправильно!");
-        if (IsSqare(n))
-        {
-            break;
-        }
-        else
-        {
-            cout << "Так как матрица квадратная, число должно быть полным квадратом!" << endl;
-        }
-    }
+    GetMatrixSize(&n, &size);
 
-    size = pow(double(n), 0.5);
+    Matrix = MatrixInit(size);
 
-    Matrix = new int* [size];
-    for (int i = 0; i < size; i++)
-    {
-        Matrix[i] = new int[size];
-    }
-
-    for (int i = 2*size - 1; i >= 1; i--)
-    {
-        bool up = i % 2 ? false : true;
-
-        n = FillDiagonal(Matrix, size, i, n, up);
-    }
+    BuildMatrix(Matrix, n, size);
 
     OutputMatrix("Матрица", Matrix, size);
 

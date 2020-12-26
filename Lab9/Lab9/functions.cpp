@@ -24,3 +24,17 @@ void SplitStrings(string strIn, string* strOut, string* strMax)
         out = !out;
     }
 }
+
+void GetInputString(string* strIn)
+{
+    cout << "Введите строку для обработки:" << endl;
+    getline(cin, *strIn);
+}
+
+void ProgramOutput(string strOut, string strMax)
+{
+    cout << "Вот введённая строка без слов на чётных местах:" << endl;
+    cout << strOut << endl;
+    cout << "Вот самое длинное слово среди оставшихся:" << endl;
+    cout << strMax << endl;
+}

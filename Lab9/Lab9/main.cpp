@@ -15,15 +15,11 @@ int main()
             strMax,                     // Самое длинное слово
             strOut;                     // Строка для вывода
     
-    cout << "Введите строку для обработки:" << endl;
-    getline(cin, strIn);
+    GetInputString(&strIn);
 
     SplitStrings(strIn, &strOut, &strMax);
 
-    cout << "Вот введённая строка без слов на чётных местах:" << endl;
-    cout << strOut << endl;
-    cout << "Вот самое длинное слово среди оставшихся:" << endl;
-    cout << strMax << endl;
+    ProgramOutput(strOut, strMax);
 
     SystemPause();
     return 0;

@@ -1,32 +1,18 @@
 #include <iostream>
-#include <locale>
+#include <clocale>
 #include <string>
+#include <Windows.h>
 #include "functions.h"
 
 using namespace std;
 
 int main()
 {
-    setlocale(LC_ALL, "ru-RU.UTF-8");
+    SetConsoleCP(1251);
+    SetConsoleOutputCP(1251);
     
-    string strIn,
-           strOut = "",
-           strTemp;
-    
-    getline(cin, strIn);
-
-    while (strIn.empty())
-    {
-        strTemp = ExtractFirstWordOfString(&strIn);
-        strOut += strTemp;
-        if (strTemp.empty())
-        {
-            strOut += "\n";
-        }
-    }
-
-    cout << strOut << endl;
+    // some code //
 
     system("pause");
-    return 0;   
+    return 0;
 }

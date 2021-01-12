@@ -2,8 +2,4 @@
 
 #include <string>
 
-#define DELIMITERS " ,./&!@#$%^*()-+=¹;:?{}[]\\|/~`<>_\""
-
-std::string ExtractFirstWordOfString(std::string* strIn);
-
-bool MatchPattern(const char* symbols, char symbolCur);
+// funcs and defines //
